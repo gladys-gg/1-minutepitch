@@ -18,5 +18,7 @@ class CommentForm(FlaskForm):
     submit = SubmitField('Comment')
 class NewPitchForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
+    title = StringField('Title', validators=[DataRequired()])
+    category = StringField('Category', validators=[DataRequired()])
     newPitch =StringField('New Pitch', validators=[DataRequired()])
     submit = SubmitField('Submit Pitch')
