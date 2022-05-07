@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from . import main
 from .forms import *
+from flask_login import login_required
 
 @main.route('/')
 @main.route('/index')
@@ -16,16 +17,19 @@ def register():
     return render_template('signUp.html', form= form)
 
 @main.route('/signIn', methods=['GET', 'POST'])
+@login_required
 def signIn():
     form=LogInForm()
     return render_template('signin.html', form= form)
-@main.route('/comment', methods=['GET', 'POST'])
 
+@main.route('/comment', methods=['GET', 'POST'])
+@login_required
 def comment():
     form=CommentForm()
     return render_template('comment.html', form= form)
-@main.route('/newpitch', methods=['GET', 'POST'])
 
+@main.route('/newpitch', methods=['GET', 'POST'])
+@login_required
 def newpitch():
     form=NewPitchForm()
     return render_template('newpitch.html', form= form)
