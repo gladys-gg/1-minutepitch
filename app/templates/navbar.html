@@ -7,16 +7,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{url_for('main.index')}}">Home</a>
+                <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">Profile</a>
+                <a class="nav-link active" href="{{url_for('newpitch')}}">New Pitch</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('main.register')}}">SignUp</a>
+                <a class="nav-link" href="{{url_for('register')}}">SignUp</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('main.signIn')}}">SignIn</a>
+                <a class="nav-link" href="{{url_for('signIn')}}">SignIn</a>
             </li>
             </ul>
         </div>
