@@ -5,9 +5,10 @@ from flask_bcrypt import Bcrypt
 # from flask_login import LoginManager
 
 
+
 app = Flask(__name__)
 app.config['SECRET_KEY']='hithere'
-app.config['SQLALCHEMY_DATABASE_URI']='SQLITE:///pitch.db'
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///pitch.db'
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
