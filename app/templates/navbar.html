@@ -5,21 +5,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link active" href="{{url_for('index')}}">Home</a>
-            </li>
+            <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{{url_for('index')}}">Home</a>
+                <a class="nav-item nav-link" href="{{url_for('logout')}}">Logout</a>
+            </div>
             
-            <li class="nav-item">
-                <a class="nav-link active" href="{{url_for('newpitch')}}">New Pitch</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('register')}}">SignUp</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('signIn')}}">SignIn</a>
-            </li>
-            </ul>
+            <div class="navbar-nav ms-auto">
+                {% if current_user.is_authenticated %}
+                <a class="nav-item nav-link" href="{{url_for('account')}}">Account</a>
+                <a class="nav-item nav-link " href="{{url_for('newpitch')}}">New Pitch</a>
+            {%else%}
+                <a class="nav-item nav-link" href="{{url_for('register')}}">SignUp</a>
+                <a class="nav-item nav-link" href="{{url_for('signIn')}}">SignIn</a>
+            {% endif %}
+            </div>
         </div>
-        </div>
-    </nav>
+    </div>
+</nav>
