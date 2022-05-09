@@ -17,13 +17,22 @@
                     <p>{{ form.password.label(class="form-control-label") }}</p>
                     <p> {{ form.password(class="form-control-input") }}</p>
                 </div>
+                <div>
+                    {{form.remember(class="form-check-input")}}
+                    {{form.remember.label(class="form-check-label")}}
+                </div>
                 <div class="form-group">
-                    {{ form.submit(class="btn bg-warning") }}
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+                <div>
+                    <small class="text-muted m1-2">
+                        <a href ="#">Forgot Password</a>
+                    </small>
                 </div>
             </fieldset>
         </form>
         <div class="text-muted text-center">
-            Don't have an account <a href="{{ url_for ('register') }}">Sign Up</a>
+            Don't have an account? <a href="{{ url_for ('register') }}">Sign Up Now</a>
         </div>
     </div>
 </div>
